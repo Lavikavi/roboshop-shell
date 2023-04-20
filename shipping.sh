@@ -11,6 +11,9 @@ mkdir /app
 echo -e "\e[36m>>>>>>>> download app content <<<<<<<<<\e[0m"
 curl -L -o /tmp/shipping.zip https://roboshop-artifacts.s3.amazonaws.com/shipping.zip
 
+script_path=$(dirname "$script")
+source ${script_path}/common.sh
+
 echo -e "\e[36m>>>>>>>> extract app content <<<<<<<<<\e[0m"
 cd /app
 unzip /tmp/shipping.zip
@@ -27,7 +30,7 @@ echo -e "\e[36m>>>>>>>> load schema <<<<<<<<<\e[0m"
 mysql -h mysqlsh-dev.devopsb62.online -uroot -pRoboShop@1 < /app/schema/shipping.sql
 
 echo -e "\e[36m>>>>>>>> setup systemdservice <<<<<<<<<\e[0m"
-cp /home/centos/roboshop-shell/shipping.service /etc/systemd/system/shipping.service
+cp $(script_path)/shipping.service /etc/systemd/system/shipping.service
 
 echo -e "\e[36m>>>>>>>> start shipping service <<<<<<<<<\e[0m"
 systemctl daemon-reload

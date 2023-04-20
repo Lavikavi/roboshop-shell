@@ -5,6 +5,9 @@ echo -e "\e[36m>>>>>>>> install nodejs <<<<<<<<<\e[0m"
 yum install nodejs -y
 
 echo -e "\e[36m>>>>>>>> add application user <<<<<<<<<\e[0m"
+script_path=$(dirname "$script")
+source ${script_path}/common.sh
+
 useradd roboshop
 
 echo -e "\e[36m>>>>>>>> create application directory <<<<<<<<<\e[0m"
@@ -22,7 +25,7 @@ echo -e "\e[36m>>>>>>>> install nodejs dependencies <<<<<<<<<\e[0m"
 npm install
 
 echo -e "\e[36m>>>>>>>> copy user systemd file <<<<<<<<<\e[0m"
-cp /home/centos/roboshop-shell/cart.service /etc/systemd/system/cart.service
+cp $(script_path)/cart.service /etc/systemd/system/cart.service
 
 echo -e "\e[36m>>>>>>>> start cart service <<<<<<<<<\e[0m"
 systemctl daemon-reload
