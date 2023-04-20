@@ -24,10 +24,10 @@ mv target/shipping-1.0.jar shipping.jar
 yum install mysql -y
 
 echo -e "\e[36m>>>>>>>> load schema <<<<<<<<<\e[0m"
-mysql -h mysqlsh-dev.devopsb62.com -uroot -pRoboShop@1 < /app/schema/shipping.sql
+mysql -h mysqlsh-dev.devopsb62.online -uroot -pRoboShop@1 < /app/schema/shipping.sql
 
 echo -e "\e[36m>>>>>>>> setup systemdservice <<<<<<<<<\e[0m"
-cp /home/centos/roboshop-shell.sh/shipping.service /etc/systemd/system/shipping.service
+cp /home/centos/roboshop-shell/shipping.service /etc/systemd/system/shipping.service
 
 echo -e "\e[36m>>>>>>>> start shipping service <<<<<<<<<\e[0m"
 systemctl daemon-reload
