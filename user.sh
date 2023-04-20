@@ -37,4 +37,4 @@ yum install mongodb-org-shell -y
 
 
 echo -e "\e[36m>>>>>>>> load schema <<<<<<<<<\e[0m"
-mongo --host mongosh-dev.devopsb62.online.com </app/schema/user.js
+mongo --host mongosh-dev.devopsb62.online </app/schema/user.js
