@@ -6,7 +6,7 @@ print_head() {
   echo -e "\e[36m>>>>>>>> $* <<<<<<<<<\e[0m"
 }
 
-schema_setup() {
+ schema_setup() {
   if [ "$schema_setup" == "mongo" ]; then
    print_head "copy mongodb repo"
   cp $(script_path)/mongo.repo /etc/yum.repos.d/mongo.repo
@@ -14,11 +14,10 @@ schema_setup() {
    print_head "install mongodb client"
   yum install mongodb-org-shell -y
 
-
    print_head "load schema"
   mongo --host mongosh-dev.devopsb62.online </app/schema/${component}.js
  fi
-}
+ }
 
 func_nodejs() {
   print_head "configuring nodejs repos"
