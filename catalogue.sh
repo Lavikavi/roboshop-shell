@@ -4,12 +4,3 @@ source ${script_path}/common.sh
 
 component=catalogue
 func_nodejs
-
-echo -e "\e[36m>>>>>> Copy MongoDB Repos  <<<<<<\e[0m"
-cp $(script_path)/mongo.repo /etc/yum.repos.d/mongo.repo
-
-echo -e "\e[36m>>>>>> Install Mongodb Client  <<<<<<\e[0m"
-yum install mongodb-org-shell -y
-
-echo -e "\e[36m>>>>>> Load schema <<<<<<\e[0m"
-mongo --host mongosh-dev.devopsb62.online </app/schema/catalogue.js
