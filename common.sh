@@ -28,7 +28,7 @@ func_nodejs() {
   yum install nodejs -y
 
   print_head "add application user"
-  useradd roboshop
+  useradd $(app_user)
 
   print_head "create application directory"
   rm -rf /app
@@ -52,4 +52,4 @@ func_nodejs() {
   systemctl enable {component}
   systemctl restart {component}
   schema_setup()
-}
+ }
