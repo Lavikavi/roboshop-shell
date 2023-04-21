@@ -6,7 +6,7 @@ print_head() {
   echo -e "\e[36m>>>>>>>> $* <<<<<<<<<\e[0m"
 }
 schema_setup(){
-  if{"$schema_setup"=="mongo"; then
+  if { "$schema_setup" == "mongo" }; then
    print_head "copy mongodb repo"
   cp $(script_path)/mongo.repo /etc/yum.repos.d/mongo.repo
 
