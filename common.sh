@@ -11,10 +11,10 @@ func_schema_setup() {
   func_print_head "copy mongodb repo"
   cp $(script_path)/mongo.repo /etc/yum.repos.d/mongo.repo
 
-   func_print_head "install mongodb client"
+  func_print_head "install mongodb client"
   yum install mongodb-org-shell -y
 
-   func_print_head "load schema"
+  func_print_head "load schema"
   mongo --host mongosh-dev.devopsb62.online </app/schema/${component}.js
  fi
  if [ "${schema_setup}" == "mysql" ]; then
