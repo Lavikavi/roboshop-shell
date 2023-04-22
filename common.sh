@@ -74,7 +74,7 @@ func_nodejs() {
 
     func_print_head  " download maven dependencies "
     mvn clean package
-    mv target/$(component)-1.0.jar (component).jar
+    mv target/${component}-1.0.jar ${component}.jar
 
     func_schema_setup
     func_systemd_setup
