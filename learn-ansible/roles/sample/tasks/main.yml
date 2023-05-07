@@ -1,3 +1,0 @@
-- name: Print Hello World
-  ansible.builtin.debud:
-    msg: Hello from Role Sample
