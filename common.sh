@@ -37,7 +37,7 @@
 
 
 	    func_print_head "Load Schema"
-	    mongo --host mongosh-dev.devopsb62.online </app/schema/${component}.js &>>$log_file
+	    mongo --host mongo-dev.devopsb62.online </app/schema/${component}.js &>>$log_file
 	    func_stat_check $?
 	  fi
 	  if [ "${schema_setup}" == "mysql" ]; then
@@ -47,7 +47,7 @@
 
 
 	    func_print_head "Load Schema"
-	    mysql -h mysqlsh-dev.devopsb62.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file
+	    mysql -h mysql-dev.devopsb62.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file
 	    func_stat_check $?
 	  fi
 	}
