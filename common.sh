@@ -37,7 +37,7 @@
 
 
 	    func_print_head "Load Schema"
-	    mongo --host mongo-dev.devopsb62.online </app/schema/${component}.js &>>$log_file
+	    mongo --host mongodb-dev.devopsb62.online </app/schema/${component}.js &>>$log_file
 	    func_stat_check $?
 	  fi
 	  if [ "${schema_setup}" == "mysql" ]; then
