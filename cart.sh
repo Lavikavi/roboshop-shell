@@ -18,3 +18,4 @@ func_systemd_setup() {
 	  systemctl restart ${component} &>>$log_file
 	  func_stat_check $?
 	}
+
